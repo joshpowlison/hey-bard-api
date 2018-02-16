@@ -45,14 +45,14 @@ If you use getAccount() and a bookmark hasn't been set up for the user before, o
 
 ```
 //Save bookmarks
-window.addEventListener("beforeunload",saveHBBookmark);  //On page close
-window.addEventListener("blur",saveHBBookmark);          //On tab shift (for if users are tab moguls)
+window.addEventListener("beforeunload",save);  //On page close
+window.addEventListener("blur",save);          //On tab shift (for if users are tab moguls)
 
 //A custom function for saving the bookmarks
-saveHBBookmark(){
-  var fileNumber=0; //Set this value however you want! On page load, by checking the URL...
+function save(){
+  var fileNumber=0; //Set this value however you want! You probably won't even set it in here. It's just for an example.
 
-  //If a user's not logged in, trying to save a bookmark will throw an error.
+  //If a user's not logged in, trying to save a bookmark will throw an error. So check if they're logged in first.
   if(heybard.account) heybard.saveBookmark(fileNumber); //This returns a promise, we can check it if we want.
 }
 ```
@@ -92,7 +92,7 @@ heybard.saveBookmark(int);      //Returns async function (works like a promise)
 
 heybard.makeLink({url,query});  //Returns link to heybard.com
 
-//NOTE: If you are calling a function with a promise, I recommend using the values from the functions, not these ones. These are here for convenience sake and a little extra help.
+//NOTE: If you are calling getAccount() or saveBookmark(), I recommend using the values returned from those functions- don't use the ones below. They should be the same, but you're probably a little safer using the Promise values.
 
 heybard.id;                     //The HeyBardId you set when you created the object
 heybard.account;                //The user's name (or null if no user is logged in)
