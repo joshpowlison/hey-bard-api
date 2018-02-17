@@ -1,6 +1,6 @@
 # Hey Bard!
 
-Hey Bard! lets you save and pull bookmarks from a remote server for your own web serial novels, webcomics, wikis, etc. If you want the simplest integration, use [Showpony](https://github.com/Josh-Powlison/showpony) once it's updated- Hey Bard! will be automatically included!
+Hey Bard! lets you save and pull bookmarks from a remote server for your own web serial novels, webcomics, wikis, etc. If you want the simplest integration, just use Hey Bard! with [Showpony](https://github.com/Josh-Powlison/showpony)!
 
 ## How does it work?
 
