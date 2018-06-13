@@ -20,7 +20,7 @@ Hey Bard! lets you save and pull bookmarks from a remote server for your own web
 
 ### Loading a user's account
 
-```
+```javascript
 heybard.getAccount()
   .then(function(response){
     //If an account exists for the user
@@ -43,7 +43,7 @@ If you use getAccount() and a bookmark hasn't been set up for the user before, o
 
 ### Save a bookmark
 
-```
+```javascript
 //Save bookmarks
 window.addEventListener("beforeunload",save);  //On page close
 window.addEventListener("blur",save);          //On tab shift (for if users are tab moguls)
@@ -63,7 +63,7 @@ This link will bring the user back to your website after logging in to a Hey Bar
 
 I recommend a direct link; no opening a new tab with `target="_blank"`. This way the user doesn't get extra tabs and you can make sure they can go to their bookmark instead of just returning to where they left off. You can even use a button to prevent middle-clicking and possible errors.
 
-```
+```javascript
 document.getElementById("heybard-link").href=heybard.makeLink({url:"https://yourwebsite.com/"});
 ```
 
@@ -73,7 +73,7 @@ document.getElementById("heybard-link").href=heybard.makeLink({url:"https://your
 
 `HeyBard` objects have the following functions and variable values:
 
-```
+```javascript
 heybard.getAccount();           //Returns async function (works like a promise)
 //Contains an object with these values:
   //call: should be "get"
