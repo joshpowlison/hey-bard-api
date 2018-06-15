@@ -29,7 +29,7 @@ heybard.getAccount()
       if(response.message) console.log(response.message);
 
       //The user has a bookmark! (May be newly created)
-      if(response.bookmark){
+      if(typeof(response.bookmark)!=='undefined'){
         location.href=/*Go to the bookmark*/;
       }
     }
@@ -74,7 +74,7 @@ document.getElementById("heybard-link").href=heybard.makeLink({url:"https://your
 `HeyBard` objects have the following functions and variable values:
 
 ```javascript
-heybard.getAccount();           //Returns async function (works like a promise)
+heybard.getAccount(int);         //Returns async function (works like a promise). You can optionally pass a bookmark value; if you do, and the user needs a bookmark set up for the site, it will be set to the passed value. Otherwise it will default to 0, but it can be updated right away with saveBookmark().
 //Contains an object with these values:
   //call: should be "get"
   //message: a message on errors, user-messages, etc
@@ -105,6 +105,10 @@ heybard.callNumber;             //The number of calls you've made to Hey Bard's 
 ### What's browser support like?
 
 Chrome, Firefox, Edge, Safari... all the major ones! Unfortunately though, I'm limited in my testing capabilities and can only check things on Chrome, Firefox, and Edge. If you run into any problems on any device, open an issue here or contact me!
+
+### It won't work for me...
+
+Check that you have 3rd-party cookies enabled. Otherwise, shoot me an email, it might be a browser problem I'm not aware of!
 
 ### How can I support this project?
 
